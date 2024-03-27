@@ -1,0 +1,105 @@
+.dress {
+  max-width: 1170px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  margin-top: 230px;
+
+  &__dresses {
+    position: absolute;
+    top: -40px;
+    right: -105px;
+  }
+
+  &__title {
+    font-size: 96px;
+    line-height: 1.15;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__text {
+    max-width: 593px;
+    font-size: 24px;
+    line-height: 1.15;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+
+    &--bottom {
+      max-width: none;
+    }
+  }
+
+  &__description {
+    max-width: 855px;
+    font-size: 36px;
+    line-height: 1.15;
+    font-weight: 400;
+    margin: 24px 0 0;
+    padding: 0;
+  }
+
+  &__peoples {
+    width: 100%;
+    margin: 24px 0;
+  }
+  @media screen and (max-width: 1250px) {
+    &__dresses {
+      width: 200px;
+      top: -65px;
+      right: 0px;
+    }
+  }
+
+  @media screen and (max-width: 950px) {
+    &__title {
+      font-size: 52px;
+    }
+
+    &__text {
+      font-size: 24px;
+
+      &--bottom {
+        max-width: none;
+      }
+    }
+
+    &__description {
+      font-size: 32px;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    &__dresses {
+      width: 136px;
+      top: -65px;
+      right: -30px;
+    }
+
+    &__title {
+      font-size: 36px;
+    }
+
+    &__text {
+      max-width: 253px;
+      font-size: 15px;
+
+      &--bottom {
+        max-width: none;
+      }
+    }
+
+    &__description {
+      font-size: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .dress {
+    margin-top: 150px;
+  }
+}

@@ -1,0 +1,56 @@
+.footer {
+  max-width: 1170px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  margin-top: 100px;
+
+  &__container {
+    display: flex;
+    gap: 50px;
+  }
+
+  &__text {
+    display: flex;
+    gap: 20px;
+    height: fit-content;
+    width: 614px;
+    font-size: 24px;
+    line-height: 1.15;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__img {
+    max-width: 540px;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 950px) {
+    &__text {
+      width: 502px;
+      font-size: 20px;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    &__text {
+      width: 351px;
+      font-size: 15px;
+    }
+
+    &__ps {
+      width: 54px;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 56px;
+  }
+}
