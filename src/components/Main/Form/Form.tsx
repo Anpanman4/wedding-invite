@@ -13,12 +13,20 @@ export const Form: React.FC = () => {
   const [drink4, setDrink4] = useState(false);
   const [drink5, setDrink5] = useState(false);
   const [drink6, setDrink6] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
 
   const submitHandler = (people: string, arrive: string, alcohol: string) => {
-    console.log({ people, arrive, alcohol });
+    if (!people || !arrive || !alcohol) {
+      setSuccessMessage("");
+      return setIsError(true);
+    }
+    if (alcohol.at(0) === " ") alcohol = alcohol.slice(1);
+    setIsError(false);
+    setSuccessMessage("Форма отправляется");
     axios
       .post("https://sheet.best/api/sheets/0194e398-57ee-4e51-800d-9e1efaef20e6", { people, arrive, alcohol })
-      .then(response => console.log(response));
+      .then(response => setSuccessMessage("Форма отправлена"));
   };
 
   return (
@@ -57,55 +65,28 @@ export const Form: React.FC = () => {
         </label>
         <h3 className="form__label">Предпочтения по напиткам</h3>
         <p className="form__description">для выбора нажмите на вариант</p>
-        <button
-          type="button"
-          className={`form__drinks ${drink0 ? "form__drinks--long" : ""}`}
-          onClick={() => setDrink0(!drink0)}
-        >
+        <p className={`form__drinks ${drink0 ? "form__drinks--long" : ""}`} onClick={() => setDrink0(!drink0)}>
           Красное вино
-        </button>
-        <button
-          type="button"
-          className={`form__drinks ${drink1 ? "form__drinks--long" : ""}`}
-          onClick={() => setDrink1(!drink1)}
-        >
+        </p>
+        <p className={`form__drinks ${drink1 ? "form__drinks--long" : ""}`} onClick={() => setDrink1(!drink1)}>
           Белое вино
-        </button>
-        <button
-          type="button"
-          className={`form__drinks ${drink2 ? "form__drinks--long" : ""}`}
-          onClick={() => setDrink2(!drink2)}
-        >
+        </p>
+        <p className={`form__drinks ${drink2 ? "form__drinks--long" : ""}`} onClick={() => setDrink2(!drink2)}>
           Шампанское
-        </button>
-        <button
-          type="button"
-          className={`form__drinks ${drink3 ? "form__drinks--short" : ""}`}
-          onClick={() => setDrink3(!drink3)}
-        >
+        </p>
+        <p className={`form__drinks ${drink3 ? "form__drinks--short" : ""}`} onClick={() => setDrink3(!drink3)}>
           Водка
-        </button>
-        <button
-          type="button"
-          className={`form__drinks ${drink4 ? "form__drinks--short" : ""}`}
-          onClick={() => setDrink4(!drink4)}
-        >
+        </p>
+        <p className={`form__drinks ${drink4 ? "form__drinks--short" : ""}`} onClick={() => setDrink4(!drink4)}>
           Виски
-        </button>
-        <button
-          type="button"
-          className={`form__drinks ${drink5 ? "form__drinks--short" : ""}`}
-          onClick={() => setDrink5(!drink5)}
-        >
+        </p>
+        <p className={`form__drinks ${drink5 ? "form__drinks--short" : ""}`} onClick={() => setDrink5(!drink5)}>
           Джин
-        </button>
-        <button
-          type="button"
-          className={`form__drinks ${drink6 ? "form__drinks--short" : ""}`}
-          onClick={() => setDrink6(!drink6)}
-        >
+        </p>
+        <p className={`form__drinks ${drink6 ? "form__drinks--short" : ""}`} onClick={() => setDrink6(!drink6)}>
           Не пью
-        </button>
+        </p>
+        {isError && <p className="form__error-message">Заполните, пожалуйста, все поля анкеты!</p>}
       </form>
       <button
         type="button"
@@ -122,6 +103,7 @@ export const Form: React.FC = () => {
       >
         Отправить
       </button>
+      {successMessage && <p className="form__success-message">{successMessage}</p>}
       <p className="form__description form__description--bottom">
         В случае возникновения вопросов в день торжества, обращайтесь к нашему свадебному координатору
         <span style={{ fontWeight: "700" }}>

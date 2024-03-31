@@ -1,9 +1,16 @@
 :root {
-  font-family: "Garamond", serif;
+  font-family: "EB Garamond", serif;
   font-style: normal;
   display: flex;
   flex-direction: column;
   background-color: #fcf8ed;
+  overflow-x: hidden;
+}
+
+* {
+  -webkit-locale: auto;
+  -webkit-text-size-adjust: none;
+  white-space: normal;
 }
 
 .page {
@@ -27,6 +34,7 @@
   }
 
   &__weAre {
+    max-width: 430px;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -41,6 +49,7 @@
   }
 
   &__hands {
+    width: 267px;
     position: absolute;
     top: 320px;
     right: 375px;
@@ -48,6 +57,7 @@
   }
 
   &__title {
+    font-family: "EB Garamond", serif;
     font-size: 128px;
     line-height: 1.15;
     font-weight: 400;
@@ -56,6 +66,7 @@
   }
 
   &__description {
+    font-family: "EB Garamond", serif;
     position: relative;
     width: fit-content;
     font-size: 40px;
@@ -67,11 +78,12 @@
 
   &__hearth {
     position: absolute;
-    top: 2px;
-    right: -7px;
+    top: 5px;
+    right: -11px;
   }
 
   &__text {
+    font-family: "EB Garamond", serif;
     max-width: 492px;
     font-size: 40px;
     line-height: 1.15;
@@ -82,8 +94,9 @@
 
   @media screen and (max-width: 1320px) {
     &__weAre {
-      position: relative;
+      max-width: none;
       width: 100%;
+      position: relative;
     }
 
     &__kiss {
@@ -107,10 +120,6 @@
   }
 
   @media screen and (max-width: 800px) {
-    &__weAre {
-      position: relative;
-    }
-
     &__title {
       font-size: 64px;
     }
@@ -127,6 +136,7 @@
     }
 
     &__hearth {
+      top: 2px;
       width: 88px;
       height: 42px;
     }

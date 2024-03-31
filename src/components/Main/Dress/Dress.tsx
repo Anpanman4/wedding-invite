@@ -13,7 +13,7 @@ export const Dress: React.FC = () => {
       <p className="dress__text">
         Мы будем признательны, если вы поможете создать особую атмосферу и присоединитесь к нашему дресс-коду
       </p>
-      <p className="dress__description" onClick={() => console.log(window.innerWidth)}>
+      <p className="dress__description">
         Тематика нашего мероприятия подразумевает торжественные, праздничные{" "}
         <span style={{ fontWeight: "700" }}>наряды в светлых оттенках</span> (бежевый, белый, серый, теплые пастельные
         цвета) <span style={{ fontWeight: "700" }}>с красным акцентом</span> (красная помада, украшения, туфли/сумка,

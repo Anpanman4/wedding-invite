@@ -8,6 +8,7 @@
   margin-top: 100px;
 
   &__title {
+    font-family: "EB Garamond", serif;
     max-width: 692px;
     font-size: 96px;
     line-height: 0.85;
@@ -18,6 +19,7 @@
   }
 
   &__text {
+    font-family: "EB Garamond", serif;
     max-width: 447px;
     font-size: 24px;
     line-height: 1.15;
@@ -32,6 +34,7 @@
   }
 
   &__label {
+    font-family: "EB Garamond", serif;
     font-size: 36px;
     line-height: 1.15;
     font-weight: 700;
@@ -40,6 +43,7 @@
   }
 
   &__description {
+    font-family: "EB Garamond", serif;
     color: #4f4f4f;
     font-size: 24px;
     line-height: 1.15;
@@ -59,6 +63,7 @@
     width: 100%;
     font-size: 24px;
     line-height: 1.15;
+    border-radius: 0;
     border: 0;
     border-bottom: 1px solid black;
     background-color: transparent;
@@ -68,6 +73,7 @@
   }
 
   &__presence {
+    font-family: "EB Garamond", serif;
     margin-top: 12px;
     position: relative;
 
@@ -76,6 +82,7 @@
     }
 
     span {
+      font-family: "EB Garamond", serif;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -115,6 +122,7 @@
   }
 
   &__drinks {
+    font-family: "EB Garamond", serif;
     width: fit-content;
     font-size: 24px;
     line-height: 1.15;
@@ -128,23 +136,23 @@
 
     &--long::before {
       content: "";
-      width: 130px;
-      height: 35px;
+      width: 177px;
+      height: 40px;
       position: absolute;
-      top: 5px;
-      left: 2px;
-      background: url(../../../images/answerBig.svg) no-repeat;
+      top: 2px;
+      left: 0;
+      background: url(../../../images/answerBigPC.svg) no-repeat;
     }
 
     &--short {
       &::before {
         content: "";
-        width: 70px;
-        height: 25px;
+        width: 95px;
+        height: 39px;
         position: absolute;
-        top: 5px;
-        left: 2px;
-        background: url(../../../images/answerSmall.svg) no-repeat;
+        top: 2px;
+        left: 1px;
+        background: url(../../../images/answerSmallPC.svg) no-repeat;
       }
     }
 
@@ -158,13 +166,37 @@
     font-size: 20px;
     line-height: 1.15;
     font-weight: 400;
-    background-color: #bc0f0b;
+    background-color: #a20000;
     margin: 40px auto 0;
     padding: 10px 86px;
     border: 0;
     cursor: pointer;
     align-self: center;
     outline: none;
+  }
+
+  &__error-message {
+    font-family: "EB Garamond", serif;
+    font-size: 20px;
+    font-weight: 700;
+    width: fit-content;
+    color: #a20000;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    top: 34px;
+  }
+
+  &__success-message {
+    font-family: "EB Garamond", serif;
+    font-size: 20px;
+    font-weight: 700;
+    width: fit-content;
+    color: #09671e;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    top: 4px;
   }
 
   @media screen and (max-width: 950px) {
@@ -208,6 +240,24 @@
 
     &__drinks {
       font-size: 20px;
+
+      &--long::before {
+        width: 130px;
+        height: 35px;
+        top: 2px;
+        left: 2px;
+        background: url(../../../images/answerBig.svg) no-repeat;
+      }
+
+      &--short {
+        &::before {
+          width: 70px;
+          height: 25px;
+          top: 5px;
+          left: 4px;
+          background: url(../../../images/answerSmall.svg) no-repeat;
+        }
+      }
     }
   }
 
@@ -227,19 +277,26 @@
     }
 
     &__description {
-      font-size: 12px;
+      font-size: 15px;
       margin-top: 4px;
 
       &--bottom {
         margin-top: 32px;
         color: black;
-        max-width: 320px;
+        max-width: 324px;
       }
     }
 
     &__text-input {
-      font-size: 15px;
       margin-top: 16px;
+    }
+
+    &__error-message {
+      font-size: 15px;
+    }
+
+    &__success-message {
+      font-size: 15px;
     }
   }
 }
@@ -248,6 +305,10 @@
   .form {
     margin-top: 70px;
     align-items: flex-start;
+
+    &__container {
+      width: 100%;
+    }
 
     &__title {
       text-align: left;

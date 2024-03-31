@@ -20,6 +20,7 @@
   }
 
   &__title {
+    font-family: "EB Garamond", serif;
     font-size: 96px;
     line-height: 1.15;
     font-weight: 400;
@@ -37,6 +38,7 @@
   }
 
   &__item {
+    font-family: "EB Garamond", serif;
     display: flex;
     align-items: center;
     gap: 16px;
@@ -48,10 +50,11 @@
   }
 
   &__time {
+    font-family: "EB Garamond", serif;
     font-size: 48px;
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 950px) {
     &__glasses {
       width: 85px;
       top: -85px;
