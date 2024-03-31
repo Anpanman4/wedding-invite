@@ -13,6 +13,7 @@ export const Form: React.FC = () => {
   const [drink4, setDrink4] = useState(false);
   const [drink5, setDrink5] = useState(false);
   const [drink6, setDrink6] = useState(false);
+  const [drink7, setDrink7] = useState(false);
   const [isError, setIsError] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
 
@@ -74,6 +75,9 @@ export const Form: React.FC = () => {
         <p className={`form__drinks ${drink2 ? "form__drinks--long" : ""}`} onClick={() => setDrink2(!drink2)}>
           Шампанское
         </p>
+        <p className={`form__drinks ${drink7 ? "form__drinks--short" : ""}`} onClick={() => setDrink7(!drink7)}>
+          Коньяк
+        </p>
         <p className={`form__drinks ${drink3 ? "form__drinks--short" : ""}`} onClick={() => setDrink3(!drink3)}>
           Водка
         </p>
@@ -96,8 +100,8 @@ export const Form: React.FC = () => {
             names,
             presence,
             `${drink0 ? "Красное вино" : ""}${drink1 ? " Белое вино" : ""}${drink2 ? " Шампанское" : ""}${
-              drink3 ? "Водка" : ""
-            }${drink4 ? " Виски" : ""}${drink5 ? " Джин" : ""}${drink6 ? " Не пью" : ""}`
+              drink7 ? " Коньяк" : ""
+            }${drink3 ? " Водка" : ""}${drink4 ? " Виски" : ""}${drink5 ? " Джин" : ""}${drink6 ? " Не пью" : ""}`
           );
         }}
       >
